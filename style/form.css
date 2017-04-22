@@ -1,0 +1,91 @@
+p {
+	margin: 0;
+	padding: 0;
+}
+#login-i, #haslo-i, #rej-email-i, #rej-login-i, 
+#rej-haslo-i, #rej-haslo-rep-i{
+	width: 150px;
+	height: 20px;
+	font-size: 16px;
+}
+#poszukiwanie-i{
+	margin-top: 20px;
+	margin-right: 22px;
+	width: calc(100% - 280px);
+	margin-left: 20px;
+	height: 24px;
+	font-size: 16px;
+}
+#rej-p, #logowanie-p, #login-p{
+	margin: 20px 0 0 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+#login-p{
+	font-size: 12px;	
+}
+#rej-login-p, #rej-email-p, #haslo-p, 
+#rej-haslo-p, #rej-haslo-rep-p{
+	margin: 10px 0 0 20px;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+#sub-rej, #sub-log, #sub-wylog {
+	margin: 20px 0 0 20px;	
+	background: RGB(140,0,20);
+	font-size: 12px;
+	width: 150px;
+}
+#sub-poszukiwanie{
+	margin-left: 0px;	
+	background: #062f52;
+	font-size: 15px;
+	width: 200px;
+}
+#sub-rej, #sub-log, #sub-poszukiwanie, #sub-wylog, #sub-produkt{
+	height: 30px;
+	color: #FFF;
+	text-align: center;
+	text-transform: uppercase;
+	border: none;
+}
+
+#rej-email-p:first-letter, #sub-rej:first-letter, 
+#rej-haslo-p:first-letter, #rej-haslo-rep-p:first-letter, 
+#rej-p:first-letter, #rej-login-p:first-letter, 
+#logowanie-p:first-letter, #login-p:first-letter, 
+#haslo-p:first-letter, #sub-com:first-letter, 
+#rejestracja:first-letter, #sub-wylog:first-letter, #a-produkt:first-letter, #sub-produkt:first-letter{
+	font-size: 150%;
+}
+#rejestracja{
+	display: block;
+	margin: 15px 0 0 20px;
+	font-size: 12px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #0058ff;
+}
+#rejestracja:hover{
+	color: #00F;
+}
+#sub-log:hover, #sub-rej:hover, #sub-wylog:hover{
+	background:  #F00;
+}
+#sub-poszukiwanie:hover, #sub-produkt:hover{
+	background:  #4040ff;
+}
+
+#sub-produkt{
+	margin: 20px 0 0 20px;	
+	background: #062f52;
+	font-size: 12px;
+	width: 150px;
+
+}
+#a-produkt{
+	color: #FFF;
+	font-size: 12px;
+	text-transform: uppercase;
+	text-decoration: none;
+}

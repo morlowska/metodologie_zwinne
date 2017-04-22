@@ -1,0 +1,153 @@
+/* Charset UTF-8*/
+
+* {
+    margin: auto;
+    padding: auto;
+}
+
+html {
+    background-color: white;
+}
+
+body {
+    width: 980px;
+    margin: auto;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #DB0808;
+}
+
+h1 {
+    padding: 20px;
+    letter-spacing: 1px;
+    font-style: italic;
+    text-align: center;
+    color: #29B00E
+}
+
+h1 a {
+    color: #0251D4
+}
+
+h1 a:hover {
+    text-decoration: none;
+}
+
+#menu {
+    list-style-type: none;
+    width: 300px;
+    float: left;
+}
+
+#menu li {
+    display: block;
+    line-height: 40px;
+}
+
+#main p {
+    line-height: 30px;
+}
+
+#database {
+    text-decoration: underline;
+    color: #DB0808;
+}
+
+#login-form {
+    margin-left: 250px;
+    margin-top: 30px;
+    line-height: 60px;
+}
+
+#login-form fieldset {
+    border: 0;
+}
+
+#login-form dt {
+    clear: left;
+    float: left;
+    padding-right: 40px;
+    letter-spacing: 1px;
+}
+
+#login-form dd {
+    float: left;
+    clear: right;
+}
+
+#login-form input[type=text], #login-form input[type=password] {
+    border: 1px solid #CBC9C9;
+    height: 30px;
+    width: 160px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#login-form input[type=password] {
+    margin-left: -4px;
+}
+
+#login-form input[type=submit] {
+    margin-left: 50px;
+    border: 1px solid #CBC9C9;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+}
+
+#register-form {
+    margin-left: 250px;
+    margin-top: 30px;
+    line-height: 60px;
+}
+
+#register-form fieldset {
+    border: 0;
+}
+
+input#register-form input {
+    margin-top: 20px;
+}
+
+#register-form dt {
+    clear: left;
+    float: left;
+    padding-right: 40px;
+    letter-spacing: 1px;
+}
+
+#register-form dd {
+    float: left;
+    clear: right;
+}
+
+#register-form input[type=text], #register-form input[type=password] {
+    border: 1px solid #CBC9C9;
+    height: 30px;
+    width: 160px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#register-form input[type=password] {
+    margin-left: -4px;
+}
+
+#email {
+    margin-left: -9px;
+}
+
+#register-form input[type=submit] {
+    margin-left: 50px;
+    border: 1px solid #CBC9C9;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+}

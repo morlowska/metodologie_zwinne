@@ -1,0 +1,55 @@
+p {
+	margin: 0;
+	padding: 0;
+}
+#emailW, #loginW, #hasloW, #hasloRep{
+	width: 150px;
+	height: 20px;
+	font-size: 16px;
+}
+#right{
+	margin-right: 0px;
+}
+#Rej_u{
+	font-size: 18px;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+}
+#Email_w:first-letter, #sub_conto:first-letter, #Has_w:first-letter, #Has_r:first-letter, #Rej_u:first-letter, #Log_w:first-letter{
+	font-size: 150%;
+}
+#Log_w, #Email_w{
+	margin-top: 10px;
+	font-size: 12px;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+#Has_w, #Has_r{
+	margin-top: 10px;
+	font-size: 12px;
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+}
+#sub_conto {
+	margin-top: 20px;	
+	margin-bottom: 0;	
+	height: 30px;
+	width: 150px;
+	background: RGB(140,0,20);
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: Arial, sans-serif;
+	border: none;
+}
+#sub_conto:hover{
+		color: RGB(250,130,0);
+}
+[name="loginW"]:hover, [name="emailW"]:hover, [name="hasloW"]:hover, [name="hasloRep"]:hover{
+	background: RGB(250,130,0);
+}
+#form-rej{
+	display:none;
+}

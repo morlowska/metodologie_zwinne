@@ -1,0 +1,53 @@
+.napis:first-letter{
+	font-size: 150%;
+}	
+.napis{
+	margin-left: 20px;
+	padding-top: 10px;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+
+#sub-add-product,#sub-add-product-end{
+	width: 250px;
+	margin-left: calc(100% - 280px);
+	margin-top: 20px;
+	font-size: 20px;
+	text-transform: uppercase;
+	height: 30px;
+	color: #FFF;
+	text-align: center;
+	border: none;
+
+}
+#sub-add-product{
+	background: #062f52;
+}
+#sub-add-product-end{
+	background: RGB(140,0,20);
+}
+#sub-add-product:hover{
+	background: #4040ff;
+}
+#sub-add-product-end:hover{
+	background: #F00;
+}
+.add_product{
+	float:right;
+	margin-top: 10px;
+	margin-right: 30px;
+	width: calc(100% - 275px);
+	height: 24px;
+	font-size: 16px;
+}
+.select_product{
+	float:right;
+	margin-top: 10px;
+	margin-right: 30px;
+	width: calc(100% - 271px);
+	height: 30px;
+	font-size: 16px;
+	
+}
+

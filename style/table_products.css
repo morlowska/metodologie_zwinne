@@ -1,0 +1,61 @@
+#last-add {
+	margin-left: 20px;
+	margin-top: 20px;
+	width: calc(100% - 50px);
+	border-collapse: separate;
+	border-spacing: 0 0;
+	font-family: tahoma, verdana, arial, sans-serif;
+	border-top: 1px solid #a9a9a9;
+}
+
+.time{
+	border-right: 1px solid #a9a9a9;
+	padding: 20px 20px 0 0;
+	font-size: 18px;
+	color: #a9a9a9;
+	height: 1px;
+}
+.photo{
+	width: 1px;
+	height: 1px;
+	border-bottom: 1px solid #a9a9a9;
+	border-left: 1px solid #a9a9a9;
+}
+img{
+	width: 200px; 	
+	height: 200px;
+	padding: 20px;
+}
+.price{
+	border-right: 1px solid #a9a9a9;
+	padding-right:20px;
+	height: 1px;
+	font-size: 35px;
+	text-align: right;	
+	vertical-align: top;
+}
+.price:after{
+	content: " zł";
+}
+
+.product-name{
+	vertical-align: bottom;
+	text-transform: uppercase;
+	font-size: 20px;
+	padding: 0 20px 0 0;
+}
+.shop{
+	border-right: 1px solid #a9a9a9;
+	padding: 5px 20px 0 0;
+	vertical-align: top;
+	font-size: 16px;
+	text-transform: uppercase;
+	height: 1px;
+}
+.produkt-title {
+	border-bottom: 1px solid #a9a9a9;
+	border-right: 1px solid #a9a9a9;
+	padding: 5px 20px 20px 0;
+	vertical-align: top;
+	font-size: 14px;
+}
