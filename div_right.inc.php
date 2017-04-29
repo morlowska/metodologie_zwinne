@@ -46,22 +46,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && ($_POST['forma'] == 2)){
 	    $email    = $_POST['rej-email-i'];
 	 
 	    if(empty($login) || empty($password) || empty($email)) {
-		    return '<p>Wypełnij wszystkie dane.</p>';
+		    header("Location: index.php?err=1");
 		}
 		elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		    return '<p>Nie poprawny adres E-mail.</p>';
+		    header("Location: index.php?err=2");
 		}
 		else {
             if (file_exists('constants.inc.php')) {
                 include_once('constants.inc.php');
             } else {
-                return 'constants.inc.php file not found.';
+                header("Location: index.php?err=4");
             }
 
             $mysqli = new mysqli(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_NAME);
 
             if($mysqli -> connect_error) {
-                return '<p>Problem z połączeniem się z bazą danych:' . $mysqli->connect_error . '[' . $mysqli->connect_errno . ']</p>';
+                header("Location: index.php?err=3");
             } else {
                 $login     = trim(strip_tags($mysqli -> real_escape_string($login)));
                 $password  = hash('sha256', trim(strip_tags($mysqli -> real_escape_string($password))));
@@ -82,11 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && ($_POST['forma'] == 2)){
 						$_SESSION['ip']   = $row[1];
 						$_SESSION['id_user'] = $row[2];
 						setcookie('islogged', 'islogged', time() + 3600); // 1h
-						header('Location:'.$_SERVER['PHP_SELF']);
+						header("Location: index.php?scs=1");
 					}
 					
                 } else {
-                    echo '<div class="err">Błąd podczas rejestracji</div>';
+                    header("Location: index.php?err=4");
                 }
             }
         }

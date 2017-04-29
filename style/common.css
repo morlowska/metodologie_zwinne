@@ -113,19 +113,24 @@ body{
 	font-size: 150%;
 }
 
-.err {
-    background-color: #aa0000;
+.err, .info {
     color: #fff;
     font-size: 12px;
     padding: 10px 20px;
-    position: absolute;
+    position: relative;
     top: 70px;
-    left: 10px;
-    right: 10px;
     z-index: 100;
 }
 
-.err:after {
+.err {
+    background-color: #a00;
+}
+
+.info {
+    background-color: #0a0;
+}
+
+.err:after, .info:after {
     content: 'x';
     font-weight: bold;
     position: absolute;
@@ -133,6 +138,6 @@ body{
     right: 10px;
 }
 
-.err:hover {
+.err:hover, .info:hover {
     cursor: pointer;
 }
