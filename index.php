@@ -96,7 +96,12 @@
 						<?php for($i=0; $i < $rows_n; $i++){   ?>
 							<tr>
 								<td class="photo" rowspan="4"><img src="image/default.jpg"></td>
-								<td colspan="2" class="time"><?= $answer[$i]['created_at']; ?></td>
+								<td colspan="2" class="time">
+                                    <?= $answer[$i]['created_at']; ?>
+                                    <?php if (isset($_SESSION['id_user']) && $_SESSION['id_user'] == $answer[$i]['user_id']) 
+                                        echo '<span class="twoj_produkt">Twój produkt</span>';
+                                    ?>
+                                </td>
 							</tr>
 							<tr>
 								<td class="product-name"><?= $answer[$i]['product_name']; ?></td>
