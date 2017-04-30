@@ -141,3 +141,18 @@ body{
 .err:hover, .info:hover {
     cursor: pointer;
 }
+
+.twoj_produkt {
+    background-color: #0A71C5;
+    color: #FFF;
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 15px;
+    top: 100px;
+}
+
+#last-add td {
+    position: relative;
+}
