@@ -1,0 +1,41 @@
+#contener_list{
+	margin-left: 20px;
+	margin-top: 20px;
+	width: calc(100% - 50px);
+	border-collapse: separate;
+	border-spacing: 0 0;
+	font-family: tahoma, verdana, arial, sans-serif;
+}
+.name_list{
+	font-size: 20px;
+}
+.text_list{
+	text-align: left;
+	width:150px;
+	font-size: 18px;
+}			
+.creata_list{
+	width: 200px;
+	text-align: left;
+	font-size: 18px;
+	color: #a9a9a9;
+}	
+
+.button_list{
+	width: 250px;
+	text-align: right;
+}
+
+.button_li{
+	background: RGB(140,0,20);
+	font-size: 18px;
+	width: 150px;
+	height: 30px;
+	color: #FFF;
+	text-align: center;
+	text-transform: uppercase;
+	border: none;
+}
+.button_li:hover{
+	background:  #F00;
+}
