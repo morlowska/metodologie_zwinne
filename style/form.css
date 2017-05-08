@@ -89,3 +89,22 @@ p {
 	text-transform: uppercase;
 	text-decoration: none;
 }
+.wybrane{
+	margin-top: 0px;
+	padding-top: 30px;
+	margin-left: 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.wybrane:first-letter {
+    font-size: 150%;
+}
+.info_wybrane{
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.info_wybrane:first-letter {
+    font-size: 150%;
+}

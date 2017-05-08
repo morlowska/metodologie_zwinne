@@ -116,7 +116,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && ($_POST['forma'] == 3)){
 		</form>
 
 		<button id="sub-produkt"><a id="a-produkt" href="add_produkt.php">Dodaj produkt</a></button>
-		
+
+		<form  action="add_list.php" method="post">
+			<button id="sub-produkt">Zapisać listę</button>
+		</form>		
+		<form  action="users_lists.php" method="post">
+			<input type='hidden' name='id_user_p' value="<?= $_SESSION['id_user']; ?>" >
+			<button id="sub-produkt">Moje listy</button>
+		</form>			
 
 
 		

@@ -1,0 +1,88 @@
+#users {
+	margin-left: 20px;
+	margin-top: 20px;
+	width: calc(100% - 50px);
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	font-family: tahoma, verdana, arial, sans-serif;
+	border-top: 1px solid #a9a9a9;
+}
+.photo{
+	width: 1px;
+	height: 1px;
+	border-left: 1px solid #a9a9a9;
+	border-bottom: 1px solid #a9a9a9;
+}
+img{
+	width: 80px; 	
+	height: 100px;
+	padding: 20px;
+}
+.login{
+	font-size: 25px;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: bottom;
+}
+.tytul_log{
+	width: 200px;
+	font-size: 18px;
+	text-align: left;
+	vertical-align: middle;
+}
+.tr_down > .tytul_log{
+	border-bottom: 1px solid #a9a9a9;
+	vertical-align: top;
+}
+.tr_top > .tytul_log{
+	vertical-align: bottom;
+}
+
+.button{
+	text-align: right;
+	width: 250px;
+	padding-right: 20px;
+	border-right: 1px solid #a9a9a9;
+	vertical-align: middle;
+}
+.tr_top > .button{
+	vertical-align: bottom;
+}
+.sub-pok{	
+	background: #1d88e3;
+	font-size: 15px;
+	width: 200px;
+	height: 30px;
+	color: #FFF;
+	text-align: center;
+	text-transform: uppercase;
+	border: none;
+}
+
+.sub-pok:hover{
+	background: #062f52;
+}
+
+.email{
+	vertical-align: middle;
+	text-align: center;
+	font-size: 20px;
+}
+.zarejestrowany{
+	vertical-align: top;
+	text-align: center;
+	font-size: 20px;
+	color: #a9a9a9;
+	border-bottom: 1px solid #a9a9a9;
+}
+.ocena{
+	padding-right: 20px;
+	vertical-align: top;
+	text-align: right;
+	font-size: 20px;
+	color: #a9a9a9;
+	border-bottom: 1px solid #a9a9a9;
+	border-right: 1px solid #a9a9a9;
+}
+
+
