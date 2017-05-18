@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && ($_POST['forma'] == 3)){
 			<button id="sub-wylog" type="submit">Wyloguj się</button>
 		</form>
 
-		<button id="sub-produkt"><a id="a-produkt" href="add_produkt.php">Dodaj produkt</a></button>
+		<button id="sub-produkt" onclick="window.location.href='add_produkt.php'">Dodaj produkt</button>
 
 		<form  action="add_list.php" method="post">
 			<button id="sub-produkt">Zapisać listę</button>
