@@ -150,9 +150,50 @@ body{
     padding: 5px 10px;
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 12px;
 }
 
 #last-add td {
     position: relative;
+}
+
+.ocena_prod {
+    font-size: 14px;
+    position: absolute;
+    top: 28px;
+}
+
+FORM#GW1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+FORM#GW2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+}
+
+FORM#GW3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+FORM#GW4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+FORM#GW5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
