@@ -21,16 +21,18 @@
 		$poszukiwanie = clear_data($_POST['poszukiwanie-i'],'s'); 
 		
 		if (!(empty($poszukiwanie))){
-			$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name
+			$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, c.category
 							FROM products p
 							INNER JOIN shops s ON p.shop_id = s.id 
+							INNER JOIN categories c ON p.product_category = c.category_id
 							WHERE p.product_name LIKE '%".$poszukiwanie."%'
 							ORDER BY p.created_at DESC";
 		}
 	}else{
-		$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name
+		$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, c.category
 						FROM products p
 						INNER JOIN shops s ON p.shop_id = s.id 
+						INNER JOIN categories c ON p.product_category = c.category_id
 						ORDER BY p.created_at DESC
 						LIMIT 10";
 	}

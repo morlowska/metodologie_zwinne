@@ -84,6 +84,9 @@ img{
 	text-transform: uppercase;
 	border: none;
 }
+.button_edit{
+	margin-bottom: 2px;
+}
 .button_jest{
 	background: #edf344;
 	font-size: 12px;

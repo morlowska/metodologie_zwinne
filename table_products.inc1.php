@@ -8,6 +8,6 @@
 	</td>
 </tr>
 <tr>
-	<td class="product-name"><?= $answer[$i]['product_name']; ?></td>
+	<td class="product-name"><?= $answer[$i]['product_name']; ?><div class="category_product"><?= $answer[$i]['category']; ?></div></td>
 	<td class="price"><?= $answer[$i]['price']; ?></td>
 </tr>
