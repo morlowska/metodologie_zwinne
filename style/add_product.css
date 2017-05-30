@@ -41,6 +41,10 @@
 	height: 24px;
 	font-size: 16px;
 }
+.edit_price{
+	height: 24px;
+	font-size: 16px;
+}
 .select_product{
 	float:right;
 	margin-top: 10px;
@@ -48,6 +52,10 @@
 	width: calc(100% - 271px);
 	height: 30px;
 	font-size: 16px;
-	
+}
+.list_history{
+	margin-top: 5px;
+	margin-left: 20px;
+	font-size: 16px;
 }
 

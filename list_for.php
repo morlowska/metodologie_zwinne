@@ -22,18 +22,20 @@
 		$poszukiwanie = clear_data($_POST['poszukiwanie-i'],'s'); 
 		if (!(empty($poszukiwanie))){
 			if ($name){
-				$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name
+				$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, c.category
 								FROM products p
 								INNER JOIN shops s ON p.shop_id = s.id 
+								INNER JOIN categories c ON p.product_category = c.category_id
 								WHERE s.name = '".$name."'
 								AND p.product_name LIKE '%".$poszukiwanie."%'
 								ORDER BY p.created_at DESC";
 			}
 			if ($id_user_p){
-				$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, u.login
+				$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, u.login, c.category
 								FROM products p
 								INNER JOIN shops s ON p.shop_id = s.id 
 								INNER JOIN user u ON p.user_id = u.id_user
+								INNER JOIN categories c ON p.product_category = c.category_id
 								WHERE p.user_id = '".$id_user_p."'
 								AND p.product_name LIKE '%".$poszukiwanie."%'
 								ORDER BY p.created_at DESC";
@@ -41,17 +43,19 @@
 		}
 	}else{
 		if ($name){
-			$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name
+			$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, c.category
 							FROM products p
 							INNER JOIN shops s ON p.shop_id = s.id 
+							INNER JOIN categories c ON p.product_category = c.category_id
 							WHERE s.name = '".$name."'
 							ORDER BY p.created_at DESC";
 		}
 		if ($id_user_p){
-			$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, u.login
+			$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, u.login, c.category
 							FROM products p
 							INNER JOIN shops s ON p.shop_id = s.id 
 							INNER JOIN user u ON p.user_id = u.id_user
+							INNER JOIN categories c ON p.product_category = c.category_id
 							WHERE p.user_id = '".$id_user_p."'
 							ORDER BY p.created_at DESC";			
 		}

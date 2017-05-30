@@ -37,9 +37,10 @@
 		$answer = array();
 					
 		for ($i=0;$i<$rows_n; $i++){
-			$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name
+			$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, c.category
 							FROM products p
 							INNER JOIN shops s ON p.shop_id = s.id 
+							INNER JOIN categories c ON p.product_category = c.category_id
 							WHERE p.id=".$session_list[$i];
 			$res = mysql_query($sql_select);
 			$row = mysql_fetch_assoc($res);	

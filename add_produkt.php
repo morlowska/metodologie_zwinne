@@ -1,7 +1,6 @@
 <?php
 	include_once('constants.inc.php');
 	include_once('lib.inc.php');
-
 	
 	session_start();
 	
@@ -16,33 +15,41 @@
 	mysql_query("SET CHARSET utf8"); // polskie znaki
 	mysql_query("SET NAMES `utf8` COLLATE `utf8_polish_ci`"); // polskie znaki
 	
+	
 	$sql_select = "SELECT id, name FROM shops";
 	$res = mysql_query($sql_select);
-
-	
 	$shop_id = clear_data($_POST['shop_id'],'i');
 	if ($shop_id){
 		$shop = mysql_result($res, $shop_id-1, 'name');
 	}
 	
+	$sql_select_category = "SELECT category_id, category, category_title FROM categories";
+	$res_category = mysql_query($sql_select_category);
+	$category_id = clear_data($_POST['category_id'],'i');
+	if ($category_id){
+		$category = mysql_result($res_category, $category_id-1, 'category');
+		$category_title = mysql_result($res_category, $category_id-1, 'category_title');
+	}	
+
 	if ($_SERVER['REQUEST_METHOD']=='POST'){
 		$product_name = clear_data($_POST['product_name'],'s');
 		$price = clear_data($_POST['price']);
 		$price = round($price*100)/100;
 		$shop_id = clear_data($_POST['shop_id'],'i');
+		$category_id = clear_data($_POST['category_id'],'i');
 		$produkt_title = clear_data($_POST['produkt_title'],'s');
 		$time = time();
 		$mysqltime = date("Y-m-d H:i:s", $time);
 
 		$rys = true;
-		if ($product_name==false or is_numeric($product_name)==true or $price <= 0)
+		if ($product_name==false or is_numeric($product_name)==true or $price <= 0 or !$shop_id or !$category_id)
 			$rys = false;
 		
 		$nadeslac = $_POST['nadeslac'];
 		if (isset($nadeslac)){
-			$sql = "INSERT INTO products (product_name, price, created_at, updated_at, shop_id, user_id, product_title)
+			$sql = "INSERT INTO products (product_name, price, created_at, updated_at, shop_id, user_id, product_title, product_category)
 				 VALUES
-					('$product_name','$price','$mysqltime','$mysqltime', $shop_id, $id_user, '$produkt_title')";
+					('$product_name','$price','$mysqltime','$mysqltime', $shop_id, $id_user, '$produkt_title', '$category_id')";
 			mysql_query($sql);			
 
 			
@@ -81,21 +88,37 @@
 				<div id="left">
 					<form  action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
 							<label><p class="napis">nazwa produktu <input class="add_product" type="text" name="product_name" size="50" value="<?= $product_name ?>"></p></label>
-							<label><p class="napis">cena produktu, zł <input class="add_product" type="text" name="price" size="50" value="<?= $price ?>"></p></label>
+							<label><p class="napis">cena produktu, zł <input class="add_product" type="text" name="price" size="50" value="<?= $price ?>"></p></label>		
 							<p class="napis">sklep 
-							<?php
-								if (!$shop){
-									echo "<select class='select_product' name='shop_id' size='1'>";
-									while ($row = mysql_fetch_assoc($res)){
-										echo "<option value ='$row[id]'>{$row['name']}</option>";
+								<?php
+									if (!$shop){
+										echo "<select class='select_product' name='shop_id' size='1'>";
+										echo "<option disabled selected>Wybierz sklep</option>";
+										while ($row = mysql_fetch_assoc($res)){
+											echo "<option value ='$row[id]'>{$row['name']}</option>";
+										}
+										echo "</select>";
+									}else {
+										echo "<input class='add_product' type='text'  size='50' value='".$shop."'>";
+										echo "<input type='hidden' name='shop_id' value='".$shop_id."'>";
 									}
-									echo "</select>";
-								}else {
-									echo "<input class='add_product' type='text'  size='50' value='".$shop."'>";
-									echo "<input type='hidden' name='shop_id' value='".$shop_id."'>";
-								}
-							?></p>
-							
+								?>
+							</p>	
+							<p class="napis">kategoria
+								<?php
+									if (!$category){
+										echo "<select class='select_product' name='category_id' size='1'>";
+										echo "<option disabled selected>Wybierz kategorię</option>";
+										while ($row_category = mysql_fetch_assoc($res_category)){
+											echo "<option value ='$row_category[category_id]'>{$row_category['category_id']}. {$row_category['category']} ({$row_category['category_title']}) </option>";
+										}
+										echo "</select>";
+									}else {
+										echo "<input class='add_product' type='text'  size='50' value='".$category." (".$category_title.")'>";
+										echo "<input type='hidden' name='category_id' value='".$category_id."'>";
+									}
+								?>
+							</p>
 							<label><p class="napis">opis produktu  <input class="add_product" type="text" name="produkt_title" size="50" value="<?= $produkt_title ?>"></p></label>
 							<?php if ($rys == NULL){	?>
 							<button id="sub-add-product" type="submit">dalej</button>	
@@ -115,7 +138,7 @@
 						</tr>
 						
 						<tr>
-							<td class="product-name"><?= $product_name ?></td>
+							<td class="product-name"><?= $product_name ?><div class="category_product"><?= $category ?></div></td>
 							<td class="price"><?= $price ?></td>
 						</tr>
 						<tr>
