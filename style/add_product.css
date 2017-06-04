@@ -58,4 +58,10 @@
 	margin-left: 20px;
 	font-size: 16px;
 }
+.tr_shop > .shop{
+	border-right: 1px solid #a9a9a9;
+}
+.tr_produkt-title > .produkt-title{
+	border-right: 1px solid #a9a9a9;
+}
 

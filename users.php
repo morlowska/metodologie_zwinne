@@ -1,3 +1,6 @@
+<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon"/>
+
+
 <?php
 	session_start();
 	include_once('constants.inc.php');
