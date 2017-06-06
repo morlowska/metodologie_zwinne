@@ -170,6 +170,10 @@ body{
     top: 28px;
 }
 
+.ocena_prod img{
+    padding: 0 !important;
+}
+
 FORM#GW1 {
     position: absolute;
     top: 0;
@@ -208,4 +212,29 @@ FORM#GW5 {
 	font-size: 15px;
 	text-transform: uppercase;
 	color: #a9a9a9;
+}
+
+.gw1 {
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.gw2 {
+    height: 25px !important;
+    width: 50px !important;
+}
+
+.gw3 {
+    height: 25px !important;
+    width: 75px !important;
+}
+
+.gw4 {
+    height: 25px !important;
+    width: 100px !important;
+}
+
+.gw5 {
+    height: 25px !important;
+    width: 125px !important;
 }

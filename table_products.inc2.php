@@ -157,7 +157,37 @@
                 $query = mysql_query ("SELECT `user_trust` FROM `products` WHERE id = ".$answer[$i]['id']);
                 $wynik = mysql_fetch_array($query);
 
-                echo '<div class="ocena_prod">ocena: '.$wynik[0].'</div>';
+                switch (intval($wynik[0])) {
+                    case 1:
+                        echo '<div class="ocena_prod">
+                            <img class="gw1" src="image/1_gwiazdka.png" alt="1">
+                        </div>';
+                        break;
+                    case 2:
+                        echo '<div class="ocena_prod">
+                            <img class="gw2" src="image/2_gwiazdki.png" alt="2">
+                        </div>';
+                        break;
+                    case 3:
+                        echo '<div class="ocena_prod">
+                            <img class="gw3" src="image/3_gwiazdki.png" alt="3">
+                        </div>';
+                        break;
+                    case 4:
+                        echo '<div class="ocena_prod">
+                            <img class="gw4" src="image/4_gwiazdki.png" alt="4">
+                        </div>';
+                        break;
+                    case 5:
+                        echo '<div class="ocena_prod">
+                            <img class="gw5" src="image/5_gwiazdek.png" alt="5">
+                        </div>';
+                        break;
+                    default:
+                        echo '<div class="ocena_prod">
+                            <img class="gw5" src="image/5_gw_tlo.png" alt="Brak oceny">
+                        </div>';
+                }
 
                 mysql_close();
             }
