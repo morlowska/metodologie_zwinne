@@ -2,8 +2,11 @@
 	session_start();
 	include_once('constants.inc.php');
 	include_once('lib.inc.php');
-	
-	$id_list_f = clear_data($_POST['id_list_f'],'i');
+
+	$id_list_f = $_POST['id_list_f'];
+
+	if (!$id_list_f)
+	    $id_list_f = $_GET['id_list_f'];
 	
 	mysql_connect(DB_HOST, DB_LOGIN, DB_PASSWORD) or die(mysql_error());
 	mysql_select_db(DB_NAME) or die(mysql_error());
@@ -18,7 +21,7 @@
 		array_push($_SESSION['array_product'], $id_pobr_produktu);
 	}
 	
-	if ($_SERVER['REQUEST_METHOD']=='POST'){
+	if ($_SERVER['REQUEST_METHOD']=='POST' || $id_list_f){
 		$sql_select = "SELECT u.login, l.list_name, l.list_created, l.session_list
 						FROM user u
 						INNER JOIN lists l ON u.id_user = l.user_id 
@@ -35,7 +38,6 @@
 
 		$rows_n = count($session_list);
 		$answer = array();
-					
 		for ($i=0;$i<$rows_n; $i++){
 			$sql_select = "SELECT p.product_name, p.price, p.created_at, p.product_title, p.user_id, p.id, s.name, c.category
 							FROM products p
@@ -75,7 +77,8 @@
 		<div id="main">
 				
 				<div id="left">
-					<?php if ($session_list){ ?>
+
+					<?php if ($session_list || $id_list_f){ ?>
 						<div class="wybrane">Lista użytkownika: <i><b><?= $login; ?></b></i></div>
 						<div class="info_wybrane">Imię listy: <i><b><?= $list_name; ?></b></i></div>
 						<div class="info_wybrane">Data stworzenia: <i><b><?= $list_created; ?></b></i></div>

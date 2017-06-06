@@ -16,26 +16,31 @@
             {
               echo '<div class="ocena_prod">
                 <form id="GW1" action="?" method="post">
+                  <input type="hidden" name="id_list_f" value="'.$_POST['id_list_f'].'">
                   <input type="hidden" name="ocena" value="1">
                   <input type="hidden" name="id" value="'.$answer[$i]['id'].'">
                   <input type="image" src="image/1_gw_tlo.png" alt="1 gwiazdka" onmouseout="this.src='."'image/1_gw_tlo.png'".'" onmouseover="this.src='."'image/1_gwiazdka.png'".'">
                 </form>
                 <form id="GW2" action="?" method="post">
+                  <input type="hidden" name="id_list_f" value="'.$_POST['id_list_f'].'">
                   <input type="hidden" name="ocena" value="2">
                   <input type="hidden" name="id" value="'.$answer[$i]['id'].'">
                   <input type="image" src="image/2_gw_tlo.png" alt="2 gwiazdki" onmouseout="this.src='."'image/2_gw_tlo.png'".'" onmouseover="this.src='."'image/2_gwiazdki.png'".'">
                 </form>
                 <form id="GW3" action="?" method="post">
+                  <input type="hidden" name="id_list_f" value="'.$_POST['id_list_f'].'">
                   <input type="hidden" name="ocena" value="3">
                   <input type="hidden" name="id" value="'.$answer[$i]['id'].'">
                   <input type="image" src="image/3_gw_tlo.png" alt="3 gwiazdki" onmouseout="this.src='."'image/3_gw_tlo.png'".'" onmouseover="this.src='."'image/3_gwiazdki.png'".'">
                 </form>
                 <form id="GW4" action="?" method="post">
+                  <input type="hidden" name="id_list_f" value="'.$_POST['id_list_f'].'">
                   <input type="hidden" name="ocena" value="4">
                   <input type="hidden" name="id" value="'.$answer[$i]['id'].'">
                   <input type="image" src="image/4_gw_tlo.png" alt="4 gwiazdki" onmouseout="this.src='."'image/4_gw_tlo.png'".'" onmouseover="this.src='."'image/4_gwiazdki.png'".'">
                 </form>
                 <form id="GW5" action="?" method="post">
+                  <input type="hidden" name="id_list_f" value="'.$_POST['id_list_f'].'">
                   <input type="hidden" name="ocena" value="5">
                   <input type="hidden" name="id" value="'.$answer[$i]['id'].'">
                   <input type="image" src="image/5_gw_tlo.png" alt="5 gwiazdek" onmouseout="this.src='."'image/5_gw_tlo.png'".'" onmouseover="this.src='."'image/5_gwiazdek.png'".'">
@@ -68,7 +73,7 @@
                   mysql_query("INSERT INTO `rate` (`id_product`, `id_user`, `date`, `rate`) VALUES(".$id.", ".$_SESSION['id_user'].", '".$data."',".$ocena.")");
 
                   mysql_close();
-                  header('Location: ?');
+                  header('Location: ?id_list_f='.$_POST['id_list_f']);
                   break;
                 case 2:
                   $ocena = 2;
@@ -87,7 +92,7 @@
                   mysql_query("INSERT INTO `rate` (`id_product`, `id_user`, `date`, `rate`) VALUES(".$id.", ".$_SESSION['id_user'].", '".$data."',".$ocena.")");
 
                   mysql_close();
-                  header('Location: ?');
+                  header('Location: ?id_list_f='.$_POST['id_list_f']);
                   break;
                 case 3:
                   $ocena = 3;
@@ -106,7 +111,7 @@
                   mysql_query("INSERT INTO `rate` (`id_product`, `id_user`, `date`, `rate`) VALUES(".$id.", ".$_SESSION['id_user'].", '".$data."',".$ocena.")");
 
                   mysql_close();
-                  header('Location: ?');
+                  header('Location: ?id_list_f='.$_POST['id_list_f']);
                   break;
                 case 4:
                   $ocena = 4;
@@ -125,7 +130,7 @@
                   mysql_query("INSERT INTO `rate` (`id_product`, `id_user`, `date`, `rate`) VALUES(".$id.", ".$_SESSION['id_user'].", '".$data."',".$ocena.")");
 
                   mysql_close();
-                  header('Location: ?');
+                  header('Location: ?id_list_f='.$_POST['id_list_f']);
                   break;
                 case 5:
                   $ocena = 5;
@@ -144,7 +149,7 @@
                   mysql_query("INSERT INTO `rate` (`id_product`, `id_user`, `date`, `rate`) VALUES(".$id.", ".$_SESSION['id_user'].", '".$data."',".$ocena.")");
 
                   mysql_close();
-                  header('Location: ?');
+                  header('Location: ?id_list_f='.$_POST['id_list_f']);
                   break;
               }
             }
