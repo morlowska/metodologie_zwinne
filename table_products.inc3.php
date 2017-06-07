@@ -9,6 +9,6 @@
 				<button class="button_d button_edit" type="submit">Redaguj</button>
 			</form>
 		<?php }?>
-	<button class="button_d" name="button_sk" value=<?= $answer[$i]['id']; ?> >Skomentyj</button>
+	<button class="button_d" name="button_sk" value=<?= $answer[$i]['id']; ?> >Skomentuj</button>
 	</td>
 </tr>
